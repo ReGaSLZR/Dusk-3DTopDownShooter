@@ -43,7 +43,7 @@ namespace ReGaSLZR.Bullet
         {
             if (targetTags.Contains(other.tag))
             {
-                var health = other.GetComponent<CharacterHealth>();
+                var health = other.GetComponent<BaseHealth>();
                 if (health == null)
                 {
                     return;
