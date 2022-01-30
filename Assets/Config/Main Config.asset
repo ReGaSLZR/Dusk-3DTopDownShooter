@@ -17,5 +17,7 @@ MonoBehaviour:
     speedRotation: 2
     mouseSensitivity: 2
     fireCooldown: 0.3
+    bulletDamage: 1
     bulletLifetime: 5
-    bulletForce: 10
+    bulletTravelSpeed: 12
+    bulletPoolCount: 20

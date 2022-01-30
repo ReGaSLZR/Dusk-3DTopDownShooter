@@ -32,14 +32,19 @@ namespace ReGaSLZR.Config
         [Space]
 
         [SerializeField]
+        [Range(1, 50)]
+        private uint bulletDamage = 3;
+        public uint BulletDamage => bulletDamage;
+
+        [SerializeField]
         [Range(0.1f, 5f)]
         private float bulletLifetime = 3f;
         public float BulletLifetime => bulletLifetime;
 
         [SerializeField]
         [Range(0.1f, 30f)]
-        private float bulletForce = 3f;
-        public float BulletForce => bulletForce;
+        private float bulletTravelSpeed = 3f;
+        public float BulletTravelSpeed => bulletTravelSpeed;
 
         [SerializeField]
         [Range(0, 50)]
