@@ -18,7 +18,7 @@ namespace ReGaSLZR.Player.Controls
         private IPlayerInput playerInput;
 
         [Inject]
-        private PlayerConfig config;
+        private Config.Player config;
 
         #endregion
 
@@ -63,7 +63,7 @@ namespace ReGaSLZR.Player.Controls
 
         private void RotateByGamePad(Vector2 gamePadRotation)
         {
-            transform.Rotate(Vector3.up * gamePadRotation.x * config.Mvmt.SpeedRotation);
+            transform.Rotate(Vector3.up * gamePadRotation.x * config.SpeedRotation);
         }
 
         private void RotateByMouse(Vector2 mousePos)
@@ -76,7 +76,7 @@ namespace ReGaSLZR.Player.Controls
 
             var targetRotation = Quaternion.LookRotation(positionVector);
             transform.rotation = Quaternion.Lerp(transform.rotation,
-                targetRotation, config.Mvmt.SpeedRotation * Time.deltaTime 
+                targetRotation, config.SpeedRotation * Time.deltaTime 
                 * config.MouseSensitivity);
         }
 

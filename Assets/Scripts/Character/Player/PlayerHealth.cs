@@ -13,7 +13,7 @@ namespace ReGaSLZR.Character.Action
         private IPlayer.ISetter player;
 
         [Inject]
-        private PlayerConfig config;
+        private Config.Player config;
 
         #region Unity Callbacks
 

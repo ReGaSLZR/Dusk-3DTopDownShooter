@@ -15,7 +15,7 @@ namespace ReGaSLZR.Character.Action
         private IPlayerInput playerInput;
 
         [Inject]
-        private PlayerConfig config;
+        private Config.Player config;
 
         #region Unity Callbacks
 
