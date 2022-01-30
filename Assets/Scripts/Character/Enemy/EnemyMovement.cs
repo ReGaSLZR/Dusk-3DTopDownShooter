@@ -5,16 +5,15 @@ using NaughtyAttributes;
 using ReGaSLZR.Base;
 using ReGaSLZR.Character.Player;
 using Zenject;
+using ReGaSLZR.Config;
 
 namespace ReGaSLZR.Character.Enemy
 {
 
+    [RequireComponent(typeof(EnemyBrain))]
     [RequireComponent(typeof(Rigidbody))]
     public class EnemyMovement : ReactiveMonoBehaviour
     {
-
-        [SerializeField]
-        private MoveType moveType;
 
         [SerializeField]
         [Required]
@@ -24,12 +23,14 @@ namespace ReGaSLZR.Character.Enemy
         private IPlayer.IGetter player;
 
         private Rigidbody rigidBody;
+        private EnemyBrain brain;
 
         #region Unity Callbacks
 
         private void Awake()
         {
             rigidBody = GetComponent<Rigidbody>();
+            brain = GetComponent<EnemyBrain>();
         }
 
         #endregion
@@ -50,19 +51,18 @@ namespace ReGaSLZR.Character.Enemy
 
         private void Move()
         {
-            pivotRotation.LookAt(player.GetPlayer().Value.transform);
+            pivotRotation.LookAt(player.GetPosition());
 
-            switch (moveType)
+            switch (brain.Config.MoveType)
             {
                 case MoveType.Chase:
                     {
-                        rigidBody.position += player.GetDirection(rigidBody.position)
-                            * Time.fixedDeltaTime * 5f;
+                        MoveRelativeToPlayer(true);
                         break;
                     }
                 case MoveType.StaysDistant:
                     {
-
+                        StayDistant();
                         break;
                     }
                 case MoveType.Stationary:
@@ -71,6 +71,28 @@ namespace ReGaSLZR.Character.Enemy
                         break;
                     }
             }
+        }
+
+        private void MoveRelativeToPlayer(bool shouldGoNear)
+        {
+            var movement = player.GetDirection(rigidBody.position)
+                                * Time.fixedDeltaTime * brain.Config.Mvmt.SpeedMovement;
+
+            if (shouldGoNear)
+            {
+                rigidBody.position += movement;
+            }
+            else 
+            {
+                rigidBody.position -= movement;
+            }
+            
+        }
+
+        private void StayDistant()
+        {
+            var distance = Vector3.Distance(player.GetPosition(), rigidBody.position);
+            MoveRelativeToPlayer(!(distance <= brain.Config.AttackDistance));
         }
 
         #endregion

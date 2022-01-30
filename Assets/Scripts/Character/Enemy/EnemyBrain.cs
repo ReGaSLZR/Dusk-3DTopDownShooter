@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using ReGaSLZR.Base;
+using ReGaSLZR.Config;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -12,18 +13,20 @@ namespace ReGaSLZR.Character.Enemy
 
         [SerializeField]
         [Required]
-        private EnemyHealth health; 
+        private EnemyConfigSO config;
+        public Config.Enemy Config => config.Config;
 
-        //[Inject]
-        //private IPlayer.IGetter player;
+
+        public void OnDeath()
+        {
+            gameObject.SetActive(false); //TODO improve this
+        }
 
         protected override void RegisterObservables()
         {
-            health.GetHealth()
-                .Where(health => health == 0)
-                .Subscribe(_ => gameObject.SetActive(false)) //TODO improve this
-                .AddTo(disposablesBasic);
+            //todo
         }
+
     }
 
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 namespace ReGaSLZR.Character.Enemy
 {
 
+    [RequireComponent(typeof(EnemyBrain))]
     public class EnemyHealth : CharacterHealth
     {
 
@@ -15,7 +16,14 @@ namespace ReGaSLZR.Character.Enemy
         [Required]
         private Slider sliderHealth;
 
+        private EnemyBrain brain;
+
         #endregion
+
+        private void Awake()
+        {
+            brain = GetComponent<EnemyBrain>();
+        }
 
         public override void SetMaxHealth(uint maxHealth)
         {
@@ -25,8 +33,15 @@ namespace ReGaSLZR.Character.Enemy
 
         protected override void RegisterObservables()
         {
+            SetMaxHealth(brain.Config.Stats.MaxHealth);
+
             GetHealth()
                 .Subscribe(health => sliderHealth.value = health)
+                .AddTo(disposablesBasic);
+
+            GetHealth()
+                .Where(health => health == 0)
+                .Subscribe(_ => brain.OnDeath())
                 .AddTo(disposablesBasic);
         }
 
