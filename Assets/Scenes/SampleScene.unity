@@ -2565,9 +2565,9 @@ GameObject:
   - component: {fileID: 1218969716}
   - component: {fileID: 1218969715}
   - component: {fileID: 1218969714}
+  - component: {fileID: 1218969719}
   - component: {fileID: 1218969718}
   - component: {fileID: 1218969717}
-  - component: {fileID: 1218969719}
   - component: {fileID: 1218969720}
   - component: {fileID: 1218969721}
   m_Layer: 0
@@ -2647,7 +2647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2907e96bd8c75d49a910dd20ac8d5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveType: 10
   pivotRotation: {fileID: 215348627}
 --- !u!114 &1218969719
 MonoBehaviour:
@@ -2661,7 +2660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f916ea27ea2877d4c8a08359b706db10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1218969717}
+  config: {fileID: 11400000, guid: bc3f42d440ba67348a20eb8ac1f7cda6, type: 2}
 --- !u!114 &1218969720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2676,7 +2675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabItem: {fileID: 8119293188406141751, guid: f593332f0f4d7e948a0775710678b168,
     type: 3}
-  selfSetup: 1
+  selfSetup: 0
   poolLength: 10
 --- !u!114 &1218969721
 MonoBehaviour:
@@ -3120,12 +3119,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534173776}
   m_CullTransparentMesh: 1
+--- !u!1 &1606608883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3412349953773747443, guid: b3ae8355f784dd4449897617fea7d2e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3412349954440813312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1606608884 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3412349953773747444, guid: b3ae8355f784dd4449897617fea7d2e5,
     type: 3}
   m_PrefabInstance: {fileID: 3412349954440813312}
   m_PrefabAsset: {fileID: 0}
+--- !u!1818360609 &1606608888
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606608883}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: 90, y: 0, z: 0}
+  m_RotationOffset: {x: 90, y: 0, z: 0}
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 1218969716}
+    weight: 1
 --- !u!4 &2135405346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6571362516757044243, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
@@ -3278,6 +3302,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3412349953773747443, guid: b3ae8355f784dd4449897617fea7d2e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3412349953773747444, guid: b3ae8355f784dd4449897617fea7d2e5,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3386,12 +3415,12 @@ PrefabInstance:
     - target: {fileID: 3412349955290493188, guid: b3ae8355f784dd4449897617fea7d2e5,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3412349955290493188, guid: b3ae8355f784dd4449897617fea7d2e5,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ae8355f784dd4449897617fea7d2e5, type: 3}
