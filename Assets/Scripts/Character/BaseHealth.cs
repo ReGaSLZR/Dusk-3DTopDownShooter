@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ReGaSLZR.Character
 {
 
-    public abstract class CharacterHealth : ReactiveMonoBehaviour
+    public abstract class BaseHealth : ReactiveMonoBehaviour
     {
 
         protected uint maxHealth = 3;

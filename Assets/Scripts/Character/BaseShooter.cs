@@ -6,7 +6,7 @@ using UnityEngine;
 namespace ReGaSLZR.Character
 {
 
-    public abstract class CharacterShooter : ReactiveMonoBehaviour
+    public abstract class BaseShooter : ReactiveMonoBehaviour
     {
 
         [SerializeField]
