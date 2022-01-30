@@ -16,7 +16,7 @@ MonoBehaviour:
     stats:
       maxHealth: 7
     movement:
-      speedMovement: 10
+      speedMovement: 7
     moveType: 10
     attackDistance: 3
     bullet:
