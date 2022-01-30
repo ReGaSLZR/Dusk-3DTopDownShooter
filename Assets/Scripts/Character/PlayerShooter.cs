@@ -14,6 +14,8 @@ namespace ReGaSLZR.Character.Action
     public class PlayerShooter : ReactiveMonoBehaviour
     {
 
+        #region Inspector Fields
+
         [SerializeField]
         [Required]
         private BulletPooler bulletPooler;
@@ -21,6 +23,8 @@ namespace ReGaSLZR.Character.Action
         [SerializeField]
         [Required]
         private Transform bulletSpawnPoint;
+
+        #endregion
 
         [Inject]
         private IPlayerInput playerInput;
@@ -30,6 +34,17 @@ namespace ReGaSLZR.Character.Action
 
         private float lastShootTime = 0f;
 
+        #region Unity Callbacks
+
+        private void Awake()
+        {
+            bulletPooler.SetUp(config.BulletPoolCount);
+        }
+
+        #endregion
+
+        #region Class Overrides
+
         protected override void RegisterObservables()
         {
             this.UpdateAsObservable()
@@ -38,6 +53,8 @@ namespace ReGaSLZR.Character.Action
                 .Subscribe(_ => FireBullet())
                 .AddTo(disposablesBasic);
         }
+
+        #endregion
 
         #region Class Implementation
 

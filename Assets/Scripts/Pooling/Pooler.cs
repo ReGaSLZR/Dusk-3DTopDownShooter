@@ -9,12 +9,20 @@ namespace ReGaSLZR.Pooling
     public abstract class Pooler<T> : MonoBehaviour where T : MonoBehaviour
     {
 
+        #region Inspector Fields
+
         [SerializeField]
         [Required]
         protected T prefabItem;
 
         [SerializeField]
-        protected uint poolLength = 15;
+        private bool selfSetup;
+
+        [SerializeField]
+        [EnableIf("selfSetup")]
+        private uint poolLength = 10;
+
+        #endregion
 
         protected Transform itemsParent;
         protected List<T> items = new List<T>();
@@ -24,19 +32,9 @@ namespace ReGaSLZR.Pooling
 
         protected virtual void Awake()
         {
-            if (prefabItem == null)
+            if (selfSetup)
             {
-                LogUtil.PrintError(GetType(), "Cannot work when prefabItem is NULL.");
-                Destroy(this);
-            }
-
-            itemsParent = new GameObject("Pool of " + prefabItem.GetType().Name).transform;
-
-            for (int x=0; x<poolLength; x++)
-            {
-                var item  = Instantiate(prefabItem, itemsParent);
-                item.gameObject.SetActive(false);
-                items.Add(item);
+                SetUp(poolLength);
             }
         }
 
@@ -57,9 +55,28 @@ namespace ReGaSLZR.Pooling
 
         #region Public API
 
+        public void SetUp(uint poolLength)
+        {
+            if (prefabItem == null)
+            {
+                LogUtil.PrintError(GetType(), "Cannot work when prefabItem is NULL.");
+                Destroy(this);
+            }
+
+            itemsParent = new GameObject("Pool of " + prefabItem.GetType().Name).transform;
+            items.Clear();
+
+            for (int x = 0; x < poolLength; x++)
+            {
+                var item = Instantiate(prefabItem, itemsParent);
+                item.gameObject.SetActive(false);
+                items.Add(item);
+            }
+        }
+
         public T GetPooledItem()
         {
-            currentIndex = (currentIndex >= (poolLength-1)) ? 0 : (currentIndex + 1);
+            currentIndex = (currentIndex >= (items.Count-1)) ? 0 : (currentIndex + 1);
             var item = items[currentIndex];
             item.gameObject.SetActive(true);
             return item;

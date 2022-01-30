@@ -41,6 +41,12 @@ namespace ReGaSLZR.Config
         private float bulletForce = 3f;
         public float BulletForce => bulletForce;
 
+        [SerializeField]
+        [Range(0, 50)]
+        [Tooltip("Change only takes effect upon restart")]
+        private uint bulletPoolCount = 20;
+        public uint BulletPoolCount => bulletPoolCount;
+
         #endregion
 
     }

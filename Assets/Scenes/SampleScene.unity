@@ -750,6 +750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabItem: {fileID: 8347483243237492798, guid: 291ed3cfd81864d419fdb25292c528b5,
     type: 3}
+  selfSetup: 0
   poolLength: 15
 --- !u!1 &962486230
 GameObject:
