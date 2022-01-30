@@ -4,7 +4,7 @@ namespace ReGaSLZR.Config
 {
 
     [System.Serializable]
-    public class PlayerConfig
+    public class Enemy
     {
 
         #region Fields
@@ -16,11 +16,6 @@ namespace ReGaSLZR.Config
         [SerializeField]
         private Movement movement;
         public Movement Mvmt => movement;
-
-        [SerializeField]
-        [Range(1f, 5f)]
-        private float mouseSensitivity = 3f;
-        public float MouseSensitivity => mouseSensitivity;
 
         [SerializeField]
         private Bullet bullet;

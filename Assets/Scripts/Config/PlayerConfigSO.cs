@@ -4,16 +4,15 @@ using Zenject;
 namespace ReGaSLZR.Config
 {
 
-    [CreateAssetMenu(fileName = "New Config", menuName = "ReGaSLZR/Config")]
-    public class Config : ScriptableObjectInstaller<Config>
+    [CreateAssetMenu(fileName = "New Player Config", menuName = "ReGaSLZR/Config")]
+    public class PlayerConfigSO : ScriptableObjectInstaller<PlayerConfigSO>
     {
 
         #region Fields
 
         [SerializeField]
         private PlayerConfig player;
-        public PlayerConfig Player => player;
-
+        
         #endregion
 
         public override void InstallBindings()

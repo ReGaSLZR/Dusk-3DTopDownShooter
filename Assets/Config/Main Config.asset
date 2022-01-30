@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Main Config
   m_EditorClassIdentifier: 
   player:
-    maxHealth: 10
-    speedMovement: 10
-    speedRotation: 2
+    stats:
+      maxHealth: 24
+    movement:
+      speedMovement: 7
+      speedRotation: 4
     mouseSensitivity: 2
-    fireCooldown: 0.3
-    bulletDamage: 1
-    bulletLifetime: 5
-    bulletTravelSpeed: 12
-    bulletPoolCount: 20
+    bullet:
+      fireCooldown: 0.1
+      damage: 1
+      lifetime: 5
+      travelSpeed: 15
+      poolCount: 40
