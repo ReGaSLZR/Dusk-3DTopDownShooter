@@ -39,7 +39,7 @@ namespace ReGaSLZR.Character.Enemy
         protected override void RegisterObservables()
         {
             this.FixedUpdateAsObservable()
-                .Where(_ => player.GetPlayer().Value != null)
+                .Where(_ => player.HasPlayer())
                 .Subscribe(_ => Move())
                 .AddTo(disposablesBasic);
         }

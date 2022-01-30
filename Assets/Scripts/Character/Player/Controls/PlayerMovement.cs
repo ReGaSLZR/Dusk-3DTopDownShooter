@@ -63,7 +63,7 @@ namespace ReGaSLZR.Player.Controls
 
         private void RotateByGamePad(Vector2 gamePadRotation)
         {
-            transform.Rotate(Vector3.up * gamePadRotation.x * config.SpeedRotation);
+            transform.Rotate(Vector3.up * gamePadRotation.x * config.Mvmt.SpeedRotation);
         }
 
         private void RotateByMouse(Vector2 mousePos)
@@ -76,13 +76,13 @@ namespace ReGaSLZR.Player.Controls
 
             var targetRotation = Quaternion.LookRotation(positionVector);
             transform.rotation = Quaternion.Lerp(transform.rotation,
-                targetRotation, config.SpeedRotation * Time.deltaTime 
+                targetRotation, config.Mvmt.SpeedRotation * Time.deltaTime 
                 * config.MouseSensitivity);
         }
 
         private void OnMove(Vector2 move)
         {
-            rigidBody.velocity = new Vector3(move.x, 0, move.y) * config.SpeedMovement;
+            rigidBody.velocity = new Vector3(move.x, 0, move.y) * config.Mvmt.SpeedMovement;
         }
 
         #endregion
