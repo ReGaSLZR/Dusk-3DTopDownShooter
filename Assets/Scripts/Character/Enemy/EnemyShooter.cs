@@ -33,7 +33,7 @@ namespace ReGaSLZR.Character.Enemy
                 .Subscribe(_ =>
                 {
                     var bullet = brain.Config.Bullet;
-                    SetLastShootTime(bullet.FireCooldown);
+                    SetLastShootTime(bullet.AttackInterval);
                     FireBullet(bullet.Damage, bullet.Lifetime, bullet.Speed);
                 })
                 .AddTo(disposablesBasic);

@@ -9,8 +9,8 @@ namespace ReGaSLZR.Config
 
         [SerializeField]
         [Range(0.0001f, 3f)]
-        private float fireCooldown = 0.5f;
-        public float FireCooldown => fireCooldown;
+        private float attackInterval = 0.5f;
+        public float AttackInterval => attackInterval;
 
         [SerializeField]
         [Range(1, 50)]

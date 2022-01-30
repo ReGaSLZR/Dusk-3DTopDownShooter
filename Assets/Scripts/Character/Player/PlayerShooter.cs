@@ -34,7 +34,7 @@ namespace ReGaSLZR.Character.Action
                 .Select(_ => playerInput.IsFiring().Value)
                 .Where(isFiring => isFiring && (lastShootTime < Time.time))
                 .Subscribe(_ => {
-                    SetLastShootTime(config.Bullet.FireCooldown);
+                    SetLastShootTime(config.Bullet.AttackInterval);
                     FireBullet(config.Bullet.Damage,
                         config.Bullet.Lifetime, config.Bullet.Speed);
                 })
