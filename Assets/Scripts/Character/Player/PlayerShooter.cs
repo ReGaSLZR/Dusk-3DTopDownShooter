@@ -65,9 +65,10 @@ namespace ReGaSLZR.Character.Action
             var bullet = bulletPooler.GetPooledItem();
             bullet.transform.position = bulletSpawnPoint.position;
             bullet.transform.rotation = bulletSpawnPoint.rotation;
+            bullet.SetDamage(config.BulletDamage);
             bullet.SetPooler(bulletPooler);
             bullet.ApplyLifetime(config.BulletLifetime);
-            bullet.ApplyForce(config.BulletForce);
+            bullet.ApplyForce(config.BulletTravelSpeed);
         }
 
         #endregion
