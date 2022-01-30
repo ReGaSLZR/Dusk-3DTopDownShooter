@@ -6,6 +6,7 @@ using UniRx;
 using Zenject;
 using ReGaSLZR.Config;
 using ReGaSLZR.Bullet;
+using NaughtyAttributes;
 
 namespace ReGaSLZR.Character.Action
 {
@@ -14,9 +15,11 @@ namespace ReGaSLZR.Character.Action
     {
 
         [SerializeField]
-        private BulletController prefabBullet;
+        [Required]
+        private BulletPooler bulletPooler;
 
         [SerializeField]
+        [Required]
         private Transform bulletSpawnPoint;
 
         [Inject]
@@ -32,17 +35,20 @@ namespace ReGaSLZR.Character.Action
             this.UpdateAsObservable()
                 .Select(_ => playerInput.IsFiring().Value)
                 .Where(isFiring => isFiring && (lastShootTime < Time.time))
-                .Subscribe(_ => OnFire())
+                .Subscribe(_ => FireBullet())
                 .AddTo(disposablesBasic);
         }
 
         #region Class Implementation
 
-        private void OnFire()
+        private void FireBullet()
         {
             lastShootTime = (Time.time + config.FireCooldown);
-            var bullet = Instantiate(prefabBullet, 
-                bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+
+            var bullet = bulletPooler.GetPooledItem();
+            bullet.transform.position = bulletSpawnPoint.position;
+            bullet.transform.rotation = bulletSpawnPoint.rotation;
+            bullet.SetPooler(bulletPooler);
             bullet.ApplyLifetime(config.BulletLifetime);
             bullet.ApplyForce(config.BulletForce);
         }

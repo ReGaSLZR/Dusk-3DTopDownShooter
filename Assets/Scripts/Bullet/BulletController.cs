@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace ReGaSLZR.Bullet
@@ -8,8 +9,11 @@ namespace ReGaSLZR.Bullet
     {
 
         private Rigidbody rigidBody;
+        private BulletPooler pooler;
 
         private float force;
+
+        #region Unity Callbacks
 
         private void Awake()
         {
@@ -21,11 +25,29 @@ namespace ReGaSLZR.Bullet
             rigidBody.velocity = transform.forward * force;
         }
 
+        #endregion
+
+        #region Class Implementation
+
+        private IEnumerator C_ApplyLifetime(float lifetime)
+        {
+            yield return new WaitForSeconds(lifetime);
+            pooler.ReturnPooledItem(this);
+        }
+
+        #endregion
+
         #region Public API
+
+        public void SetPooler(BulletPooler pooler)
+        {
+            this.pooler = pooler;
+        }
 
         public void ApplyLifetime(float lifetime)
         {
-            Destroy(gameObject, lifetime);
+            StopAllCoroutines();
+            StartCoroutine(C_ApplyLifetime(lifetime));
         }
 
         public void ApplyForce(float force)

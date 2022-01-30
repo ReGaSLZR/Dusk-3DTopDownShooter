@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 948944640}
   - component: {fileID: 948944642}
   - component: {fileID: 948944639}
+  - component: {fileID: 948944643}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -692,8 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d8cc95abd21db44ba4d1051cb7bd48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabBullet: {fileID: 8347483243237492798, guid: 291ed3cfd81864d419fdb25292c528b5,
-    type: 3}
+  bulletPooler: {fileID: 948944643}
   bulletSpawnPoint: {fileID: 2135405346}
 --- !u!54 &948944640
 Rigidbody:
@@ -736,6 +736,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e452a4ecd9eab428e3bf03baad2b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &948944643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948944637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8542234011f2f3745bca37290dc86f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabItem: {fileID: 8347483243237492798, guid: 291ed3cfd81864d419fdb25292c528b5,
+    type: 3}
+  poolLength: 15
 --- !u!1 &962486230
 GameObject:
   m_ObjectHideFlags: 0
