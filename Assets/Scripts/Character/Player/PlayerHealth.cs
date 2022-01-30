@@ -15,6 +15,18 @@ namespace ReGaSLZR.Character.Action
         [Inject]
         private PlayerConfig config;
 
+        #region Unity Callbacks
+
+        private void Start()
+        {
+            player.SetMaxHealth(config.Stats.MaxHealth);
+            SetMaxHealth(config.Stats.MaxHealth);
+        }
+
+        #endregion
+
+        #region Class Overrides
+
         protected override void RegisterObservables()
         {   
             GetHealth()
@@ -22,11 +34,7 @@ namespace ReGaSLZR.Character.Action
                 .AddTo(disposablesBasic);
         }
 
-        private void Start()
-        {
-            player.SetMaxHealth(config.MaxHealth);
-            SetMaxHealth(config.MaxHealth);
-        }
+        #endregion        
 
     }
 

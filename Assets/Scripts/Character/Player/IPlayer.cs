@@ -10,6 +10,8 @@ namespace ReGaSLZR.Character.Player
         public interface IGetter
         {
             IReadOnlyReactiveProperty<GameObject> GetPlayer();
+            bool HasPlayer();
+            Vector3 GetPosition();
             Vector3 GetDirection(Vector3 origin);
             IReadOnlyReactiveProperty<uint> GetHealth();
             IReadOnlyReactiveProperty<uint> GetMaxHealth();

@@ -25,6 +25,10 @@ namespace ReGaSLZR.Character.Player
             return rPlayer;
         }
 
+        public bool HasPlayer() => rPlayer.Value != null;
+
+        public Vector3 GetPosition() => rPlayer.Value.transform.position;
+
         public Vector3 GetDirection(Vector3 origin)
         {
             return (rPlayer.Value.transform.position - origin).normalized;
