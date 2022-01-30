@@ -5,7 +5,6 @@ using NaughtyAttributes;
 using ReGaSLZR.Base;
 using ReGaSLZR.Character.Player;
 using Zenject;
-using ReGaSLZR.Config;
 
 namespace ReGaSLZR.Character.Enemy
 {

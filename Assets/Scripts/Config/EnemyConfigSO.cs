@@ -10,7 +10,7 @@ namespace ReGaSLZR.Config
         #region Fields
 
         [SerializeField]
-        private Enemy config;
+        private Enemy config = new Enemy();
         public Enemy Config => config;
 
         #endregion

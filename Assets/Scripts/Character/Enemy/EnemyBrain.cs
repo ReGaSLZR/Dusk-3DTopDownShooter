@@ -1,9 +1,7 @@
 using NaughtyAttributes;
 using ReGaSLZR.Base;
 using ReGaSLZR.Config;
-using UniRx;
 using UnityEngine;
-using Zenject;
 
 namespace ReGaSLZR.Character.Enemy
 {
@@ -14,8 +12,9 @@ namespace ReGaSLZR.Character.Enemy
         [SerializeField]
         [Required]
         private EnemyConfigSO config;
-        public Config.Enemy Config => config.Config;
+        public Config.Enemy Config => (config == null) ? dummyConfig : config.Config;
 
+        private Config.Enemy dummyConfig = new Config.Enemy();
 
         public void OnDeath()
         {

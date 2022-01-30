@@ -11,15 +11,15 @@ namespace ReGaSLZR.Config
         #region Fields
 
         [SerializeField]
-        private CharacterStats stats;
+        private CharacterStats stats = new CharacterStats();
         public CharacterStats Stats => stats;
 
         [SerializeField]
-        private Movement movement;
+        private Movement movement = new Movement();
         public Movement Mvmt => movement;
 
         [SerializeField]
-        private MoveType moveType;
+        private MoveType moveType = MoveType.Stationary;
         public MoveType MoveType => moveType;
 
         [SerializeField]
@@ -28,7 +28,7 @@ namespace ReGaSLZR.Config
         public float AttackDistance => attackDistance;
 
         [SerializeField]
-        private Bullet bullet;
+        private Bullet bullet = new Bullet();
         public Bullet Bullet => bullet;
 
         #endregion

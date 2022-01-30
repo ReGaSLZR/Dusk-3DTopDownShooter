@@ -1,7 +1,5 @@
-using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace ReGaSLZR.Character.Enemy
 {
@@ -12,10 +10,6 @@ namespace ReGaSLZR.Character.Enemy
 
         #region Inspector Fields
 
-        [SerializeField]
-        [Required]
-        private Slider sliderHealth;
-
         private EnemyBrain brain;
 
         #endregion
@@ -25,19 +19,9 @@ namespace ReGaSLZR.Character.Enemy
             brain = GetComponent<EnemyBrain>();
         }
 
-        public override void SetMaxHealth(uint maxHealth)
-        {
-            base.SetMaxHealth(maxHealth);
-            sliderHealth.maxValue = maxHealth;
-        }
-
         protected override void RegisterObservables()
         {
             SetMaxHealth(brain.Config.Stats.MaxHealth);
-
-            GetHealth()
-                .Subscribe(health => sliderHealth.value = health)
-                .AddTo(disposablesBasic);
 
             GetHealth()
                 .Where(health => health == 0)
