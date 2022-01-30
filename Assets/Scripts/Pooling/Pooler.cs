@@ -63,6 +63,11 @@ namespace ReGaSLZR.Pooling
                 Destroy(this);
             }
 
+            if (itemsParent != null)
+            {
+                DestroyImmediate(itemsParent.gameObject);
+            }
+
             itemsParent = new GameObject("Pool of " + prefabItem.GetType().Name).transform;
             items.Clear();
 
