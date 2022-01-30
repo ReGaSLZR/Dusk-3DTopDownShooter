@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 92d9ade820ea3f14788f83d1c9c1dfae
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 8404be70184654265930450def6a9037, type: 3}
+  generateWrapperCode: 1
+  wrapperCodePath: Assets/Input Controls/Player Controls.cs
+  wrapperClassName: 
+  wrapperCodeNamespace: ReGaSLZR.Player.Input
