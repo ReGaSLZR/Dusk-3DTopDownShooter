@@ -10,7 +10,7 @@ using static UnityEngine.InputSystem.InputAction;
 namespace ReGaSLZR.Player.Controls
 {
 
-    public class PlayerInput : MonoInstaller<PlayerInput>, IPlayerInput
+    public class PlayerInputModel : MonoInstaller<PlayerInputModel>, IPlayerInput
     {
 
         #region Private Fields

@@ -9,6 +9,16 @@ namespace ReGaSLZR.Config
 
         #region Fields
 
+        [Header("Stats")]
+
+        [SerializeField]
+        [Range(1, 100)]
+        [Tooltip("Change only takes effect upon restart")]
+        private uint maxHealth = 3;
+        public uint MaxHealth => maxHealth;
+
+        [Header("Basic Controls")]
+
         [SerializeField]
         [Range(0.1f, 20f)]
         private float speedMovement = 3f;
@@ -29,7 +39,7 @@ namespace ReGaSLZR.Config
         private float fireCooldown = 0.5f;
         public float FireCooldown => fireCooldown;
 
-        [Space]
+        [Header("Projectile Settings")]
 
         [SerializeField]
         [Range(1, 50)]

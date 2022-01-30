@@ -1,36 +1,28 @@
-using NaughtyAttributes;
+using ReGaSLZR.Base;
+using UniRx;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace ReGaSLZR.Character
 {
 
-    public class CharacterHealth : MonoBehaviour
+    public abstract class CharacterHealth : ReactiveMonoBehaviour
     {
 
-        #region Inspector Fields
+        protected uint maxHealth = 3;
+        protected IReactiveProperty<uint> health = new ReactiveProperty<uint>(3);
 
-        [SerializeField]
-        [Required]
-        private Slider sliderHealth;
-
-        #endregion
-
-        public void SetMaxHealth(uint maxHealth)
+        public virtual void SetMaxHealth(uint maxHealth)
         {
-            sliderHealth.maxValue = maxHealth;
+            this.maxHealth = maxHealth;
+            health.Value = maxHealth;
         }
 
-        public void Damage(uint damage)
+        public virtual void Damage(uint damage)
         {
-            sliderHealth.value = Mathf.Clamp((sliderHealth.value - damage), 
-                0, sliderHealth.maxValue);
-
-            if (sliderHealth.value == 0)
-            {
-                gameObject.SetActive(false);
-            }
+            health.Value = (uint)Mathf.Clamp((health.Value - damage), 0, maxHealth);
         }
+
+        public IReadOnlyReactiveProperty<uint> GetHealth() => health;
 
     }
 

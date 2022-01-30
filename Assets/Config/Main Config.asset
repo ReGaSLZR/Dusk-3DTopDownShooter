@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Main Config
   m_EditorClassIdentifier: 
   player:
+    maxHealth: 10
     speedMovement: 10
     speedRotation: 2
     mouseSensitivity: 2
