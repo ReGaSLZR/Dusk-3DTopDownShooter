@@ -9,19 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0302c4c73a16f4445b3399daa494029d, type: 3}
-  m_Name: Main Config
+  m_Script: {fileID: 11500000, guid: 308010ff22510d64cb1e762387e93620, type: 3}
+  m_Name: Enemy Ranged Config
   m_EditorClassIdentifier: 
-  player:
+  config:
     stats:
-      maxHealth: 24
+      maxHealth: 1
     movement:
-      speedMovement: 7
-      speedRotation: 4
-    mouseSensitivity: 2
+      speedMovement: 5
+    moveType: 20
+    attackDistance: 25
     bullet:
-      fireCooldown: 0.1
-      damage: 1
-      lifetime: 5
-      travelSpeed: 15
-      poolCount: 40
+      fireCooldown: 1.5
+      damage: 2
+      lifetime: 2
+      travelSpeed: 10
+      poolCount: 10

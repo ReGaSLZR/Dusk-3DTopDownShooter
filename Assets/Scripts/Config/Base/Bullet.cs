@@ -8,7 +8,7 @@ namespace ReGaSLZR.Config
     {
 
         [SerializeField]
-        [Range(0.0001f, 5f)]
+        [Range(0.0001f, 3f)]
         private float fireCooldown = 0.5f;
         public float FireCooldown => fireCooldown;
 

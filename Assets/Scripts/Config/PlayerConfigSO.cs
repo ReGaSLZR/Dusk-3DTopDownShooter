@@ -4,14 +4,14 @@ using Zenject;
 namespace ReGaSLZR.Config
 {
 
-    [CreateAssetMenu(fileName = "New Player Config", menuName = "ReGaSLZR/Config")]
+    [CreateAssetMenu(fileName = "New Player Config", menuName = "ReGaSLZR/Config/New Player")]
     public class PlayerConfigSO : ScriptableObjectInstaller<PlayerConfigSO>
     {
 
         #region Fields
 
         [SerializeField]
-        private PlayerConfig player;
+        private Player player;
         
         #endregion
 

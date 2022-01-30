@@ -1,24 +1,19 @@
 using UnityEngine;
-using Zenject;
 
 namespace ReGaSLZR.Config
 {
 
-    [CreateAssetMenu(fileName = "New Enemy Config", menuName = "ReGaSLZR/Config")]
-    public class EnemyConfigSO : ScriptableObjectInstaller<EnemyConfigSO>
+    [CreateAssetMenu(fileName = "New Enemy Config", menuName = "ReGaSLZR/Config/New Enemy")]
+    public class EnemyConfigSO : ScriptableObject
     {
 
         #region Fields
 
         [SerializeField]
         private Enemy config;
+        public Enemy Config => config;
 
         #endregion
-
-        public override void InstallBindings()
-        {
-            Container.BindInstances(config);
-        }
 
     }
 

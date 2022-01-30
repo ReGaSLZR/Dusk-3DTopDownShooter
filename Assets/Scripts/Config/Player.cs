@@ -4,7 +4,7 @@ namespace ReGaSLZR.Config
 {
 
     [System.Serializable]
-    public class PlayerConfig
+    public class Player
     {
 
         #region Fields
@@ -16,6 +16,11 @@ namespace ReGaSLZR.Config
         [SerializeField]
         private Movement movement;
         public Movement Mvmt => movement;
+
+        [SerializeField]
+        [Range(0.1f, 20f)]
+        private float speedRotation = 3f;
+        public float SpeedRotation => speedRotation;
 
         [SerializeField]
         [Range(1f, 5f)]
