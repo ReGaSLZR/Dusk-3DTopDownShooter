@@ -6,7 +6,7 @@ using Zenject;
 namespace ReGaSLZR.Character.Action
 {
 
-    public class PlayerHealth : CharacterHealth
+    public class PlayerHealth : BaseHealth
     {
 
         [Inject]

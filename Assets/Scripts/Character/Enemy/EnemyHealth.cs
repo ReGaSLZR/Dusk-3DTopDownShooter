@@ -5,7 +5,7 @@ namespace ReGaSLZR.Character.Enemy
 {
 
     [RequireComponent(typeof(EnemyBrain))]
-    public class EnemyHealth : CharacterHealth
+    public class EnemyHealth : BaseHealth
     {
 
         #region Inspector Fields

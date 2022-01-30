@@ -8,7 +8,7 @@ using ReGaSLZR.Config;
 namespace ReGaSLZR.Character.Action
 {
 
-    public class PlayerShooter : CharacterShooter
+    public class PlayerShooter : BaseShooter
     {
 
         [Inject]

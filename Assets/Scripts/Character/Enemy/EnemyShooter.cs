@@ -8,7 +8,7 @@ namespace ReGaSLZR.Character.Enemy
 {
 
     [RequireComponent(typeof(EnemyBrain))]
-    public class EnemyShooter : CharacterShooter
+    public class EnemyShooter : BaseShooter
     {
 
         [Inject]
