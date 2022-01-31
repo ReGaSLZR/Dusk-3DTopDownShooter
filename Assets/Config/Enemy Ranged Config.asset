@@ -22,6 +22,6 @@ MonoBehaviour:
     bullet:
       attackInterval: 0.5
       damage: 2
-      lifetime: 2
+      lifetime: 5
       travelSpeed: 10
       poolCount: 10
