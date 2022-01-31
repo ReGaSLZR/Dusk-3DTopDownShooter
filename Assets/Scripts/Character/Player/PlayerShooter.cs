@@ -1,9 +1,8 @@
 using UnityEngine;
-using ReGaSLZR.Player.Controls;
 using UniRx.Triggers;
 using UniRx;
 using Zenject;
-using ReGaSLZR.Config;
+using ReGaSLZR.Character.Player.Input;
 
 namespace ReGaSLZR.Character.Action
 {

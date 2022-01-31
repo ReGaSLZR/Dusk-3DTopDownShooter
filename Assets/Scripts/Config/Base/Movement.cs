@@ -8,7 +8,7 @@ namespace ReGaSLZR.Config
     {
 
         [SerializeField]
-        [Range(0.1f, 20f)]
+        [Range(0.1f, 50f)]
         private float speedMovement = 3f;
         public float SpeedMovement => speedMovement;
 

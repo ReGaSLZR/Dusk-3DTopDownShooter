@@ -11,6 +11,7 @@ namespace ReGaSLZR.Config
     {
 
         [SerializeField]
+        [InfoBox("Change to the list count below only takes effect upon restart", EInfoBoxType.Normal)]
         private List<EnemyType> entries = new List<EnemyType>();
         public List<EnemyType> Entries => entries;
 
@@ -27,6 +28,7 @@ namespace ReGaSLZR.Config
 
         [SerializeField]
         [Required]
+        [Expandable]
         private EnemyConfigSO config;
         public EnemyConfigSO Config => config;
 

@@ -23,7 +23,7 @@ namespace ReGaSLZR.Config
         public MoveType MoveType => moveType;
 
         [SerializeField]
-        [Range(1f, 35f)]
+        [Range(1f, 50f)]
         private float attackDistance = 5f;
         public float AttackDistance => attackDistance;
 

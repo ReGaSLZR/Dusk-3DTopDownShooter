@@ -10,6 +10,8 @@ namespace ReGaSLZR.Character.Action
     public class PlayerHealth : BaseHealth
     {
 
+        #region Private Fields
+
         [Inject]
         private IPlayer.ISetter player;
 
@@ -17,6 +19,8 @@ namespace ReGaSLZR.Character.Action
         private Config.Player config;
 
         private PlayerBrain brain;
+
+        #endregion
 
         #region Unity Callbacks
 

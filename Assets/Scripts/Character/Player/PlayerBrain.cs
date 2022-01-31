@@ -8,6 +8,8 @@ namespace ReGaSLZR.Character.Player
     public class PlayerBrain : BaseBrain
     {
 
+        #region Private Fields
+
         [Inject]
         private IPlayer.IGetter playerGetter;
 
@@ -20,10 +22,14 @@ namespace ReGaSLZR.Character.Player
         [Inject]
         private IData.ISetter dataSetter;
 
+        #endregion
+
         private void Start()
         {
             playerSetter.SetPlayer(gameObject);
         }
+
+        #region Class Overrides
 
         public override void OnDeath()
         {
@@ -36,6 +42,8 @@ namespace ReGaSLZR.Character.Player
             gameObject.SetActive(false);
             SceneUtil.RestartCurrent();
         }
+
+        #endregion
 
     }
 

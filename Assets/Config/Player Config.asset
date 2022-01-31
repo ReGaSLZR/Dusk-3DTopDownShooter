@@ -23,5 +23,5 @@ MonoBehaviour:
       attackInterval: 0.1
       damage: 3
       lifetime: 5
-      travelSpeed: 20
+      travelSpeed: 30
       poolCount: 40

@@ -8,14 +8,25 @@ namespace ReGaSLZR.Character.Enemy
     public class EnemyBrain : BaseBrain
     {
 
+        #region Private Fields
+
         [Inject]
         private IPlayer.ISetter player;
 
         private Config.Enemy dummyConfig = new Config.Enemy();
         private EnemyConfigSO config;
-        public Config.Enemy Config => (config == null) ? dummyConfig : config.Config;
 
         private EnemyPooler pooler;
+
+        #endregion
+
+        #region Accessors
+
+        public Config.Enemy Config => (config == null) ? dummyConfig : config.Config;
+
+        #endregion
+
+        #region Class Overrides
 
         public override void OnDeath()
         {
@@ -30,6 +41,10 @@ namespace ReGaSLZR.Character.Enemy
             pooler.ReturnPooledItem(this);
         }
 
+        #endregion
+
+        #region Public API
+
         public void SetConfig(EnemyConfigSO config)
         {
             this.config = config;
@@ -39,6 +54,8 @@ namespace ReGaSLZR.Character.Enemy
         {
             this.pooler = pooler;
         }
+
+        #endregion
 
     }
 

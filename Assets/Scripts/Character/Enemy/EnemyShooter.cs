@@ -11,15 +11,25 @@ namespace ReGaSLZR.Character.Enemy
     public class EnemyShooter : BaseShooter
     {
 
+        #region Private Fields
+
         [Inject]
         private IPlayer.IGetter player;
         
         private EnemyBrain brain;
 
+        #endregion
+
+        #region Unity Callbacks
+
         private void Awake()
         {
             brain = GetComponent<EnemyBrain>();
         }
+
+        #endregion
+
+        #region Class Overrides
 
         protected override void RegisterObservables()
         {
@@ -43,6 +53,8 @@ namespace ReGaSLZR.Character.Enemy
                 })
                 .AddTo(disposablesBasic);
         }
+
+        #endregion
 
     }
 

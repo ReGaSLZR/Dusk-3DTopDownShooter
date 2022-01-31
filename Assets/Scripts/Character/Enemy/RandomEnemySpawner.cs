@@ -1,6 +1,6 @@
-using ReGaSLZR.Base;
 using ReGaSLZR.Character.Player;
 using ReGaSLZR.Config;
+using ReGaSLZR.Prefab;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +11,8 @@ namespace ReGaSLZR.Character.Enemy
 
     public class RandomEnemySpawner : MonoBehaviour
     {
+
+        #region Private Fields
 
         [Inject]
         private IPrefabInjector prefabInjector;
@@ -26,11 +28,19 @@ namespace ReGaSLZR.Character.Enemy
 
         private List<EnemyPooler> poolers = new List<EnemyPooler>();
 
+        #endregion
+
+        #region Unity Callbacks
+
         private void Start()
         {
             SetUpPoolers();
             StartCoroutine(C_Spawn());
         }
+
+        #endregion
+
+        #region Class Implementation
 
         private void SetUpPoolers()
         {
@@ -68,6 +78,8 @@ namespace ReGaSLZR.Character.Enemy
             enemy.transform.position = gameObject.transform.position;
             enemy.gameObject.SetActive(true);
         }
+
+        #endregion
 
     }
 

@@ -29,7 +29,7 @@ namespace ReGaSLZR.Character
             bullet.SetDamage(damage);
             bullet.SetPooler(bulletPooler);
             bullet.ApplyLifetime(lifetime);
-            bullet.ApplyForce(speed);
+            bullet.SetSpeed(speed);
         }
 
         protected virtual void SetLastShootTime(float cooldown)

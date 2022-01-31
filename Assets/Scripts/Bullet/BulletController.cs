@@ -21,11 +21,15 @@ namespace ReGaSLZR.Bullet
 
         #endregion
 
+        #region Private Fields
+
         private Rigidbody rigidBody;
         private BulletPooler pooler;
 
         private uint damage;
-        private float force;
+        private float travelSpeed;
+
+        #endregion
 
         #region Unity Callbacks
 
@@ -37,7 +41,7 @@ namespace ReGaSLZR.Bullet
 
         private void FixedUpdate()
         {
-            rigidBody.velocity = transform.forward * force;
+            rigidBody.velocity = transform.forward * travelSpeed;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -97,9 +101,9 @@ namespace ReGaSLZR.Bullet
             StartCoroutine(C_ApplyLifetime(lifetime));
         }
 
-        public void ApplyForce(float force)
+        public void SetSpeed(float speed)
         {
-            this.force = force;
+            travelSpeed = speed;
         }
 
         #endregion

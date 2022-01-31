@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace ReGaSLZR.Config
@@ -9,7 +10,7 @@ namespace ReGaSLZR.Config
 
         [SerializeField]
         [Range(1, 100)]
-        [Tooltip("Change only takes effect upon restart")]
+        [InfoBox("Change to the field below only takes effect upon restart", EInfoBoxType.Normal)]
         private uint maxHealth = 3;
         public uint MaxHealth => maxHealth;
 

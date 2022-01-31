@@ -24,9 +24,13 @@ namespace ReGaSLZR.Data
             rHighScore.Value = PlayerPrefs.GetInt(KEY_HIGH_SCORE, 0);
         }
 
-        #region Interface Implementations
+        #region Interface Getter Implementations
 
         public IReadOnlyReactiveProperty<int> GetHighScore() => rHighScore;
+
+        #endregion 
+
+        #region Interface Setter Implementations
 
         public void SetHighScore(int highScore)
         {

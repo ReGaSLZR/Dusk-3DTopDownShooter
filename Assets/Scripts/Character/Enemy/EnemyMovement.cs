@@ -14,15 +14,23 @@ namespace ReGaSLZR.Character.Enemy
     public class EnemyMovement : ReactiveMonoBehaviour
     {
 
+        #region Inspector Fields
+
         [SerializeField]
         [Required]
         private Transform pivotRotation;
+
+        #endregion
+
+        #region Private Fields
 
         [Inject]
         private IPlayer.IGetter player;
 
         private Rigidbody rigidBody;
         private EnemyBrain brain;
+
+        #endregion
 
         #region Unity Callbacks
 

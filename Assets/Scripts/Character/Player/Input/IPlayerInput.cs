@@ -1,7 +1,7 @@
 using UniRx;
 using UnityEngine;
 
-namespace ReGaSLZR.Player.Controls
+namespace ReGaSLZR.Character.Player.Input
 {
 
     public interface IPlayerInput

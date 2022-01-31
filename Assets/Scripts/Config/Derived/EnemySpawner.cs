@@ -12,7 +12,7 @@ namespace ReGaSLZR.Config
         public uint PoolCountPerType => poolCountPerType;
 
         [SerializeField]
-        [Range(15f, 150f)]
+        [Range(10f, 200f)]
         private float waveIntervalInSeconds = 25f;
         public float WaveIntervalInSeconds => waveIntervalInSeconds;
 

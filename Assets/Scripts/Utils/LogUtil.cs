@@ -9,17 +9,17 @@ namespace ReGaSLZR.Utils {
 
         public static void PrintInfo(Object gameObject, System.Type logger, string message)
         {
-            Debug.Log(logger.Name.ToString() + CONCATENATOR + message, gameObject);
+            Debug.Log(string.Concat(logger.Name, CONCATENATOR, message), gameObject);
         }
 
         public static void PrintWarning(Object gameObject, System.Type logger, string message)
         {
-            Debug.LogWarning(logger.Name + CONCATENATOR + message, gameObject);
+            Debug.LogWarning(string.Concat(logger.Name, CONCATENATOR, message), gameObject);
         }
 
         public static void PrintError(Object gameObject, System.Type logger, string message)
         {
-            Debug.LogError(logger.Name + CONCATENATOR + message, gameObject);
+            Debug.LogError(string.Concat(logger.Name, CONCATENATOR, message), gameObject);
         }
 
         /* 
@@ -28,18 +28,18 @@ namespace ReGaSLZR.Utils {
          */
 
         public static void PrintInfo(System.Type logger, string message)
-        {
-            Debug.Log(logger.Name.ToString() + CONCATENATOR + message);
+        {             
+            Debug.Log(string.Concat(logger.Name, CONCATENATOR, message));
         }
 
         public static void PrintWarning(System.Type logger, string message)
         {
-            Debug.LogWarning(logger.Name + CONCATENATOR + message);
+            Debug.LogWarning(string.Concat(logger.Name, CONCATENATOR, message));
         }
 
         public static void PrintError(System.Type logger, string message)
         {
-            Debug.LogError(logger.Name + CONCATENATOR + message);
+            Debug.LogError(string.Concat(logger.Name, CONCATENATOR, message));
         }
 
         public static void PrintInfo(string message)
