@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using ReGaSLZR.Character;
+using ReGaSLZR.Constant;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,6 +42,12 @@ namespace ReGaSLZR.Bullet
 
         private void OnTriggerEnter(Collider other)
         {
+            if (Tag.WALL.Equals(other.tag))
+            {
+                DisableSelf();
+                return;
+            }
+
             if (targetTags.Contains(other.tag))
             {
                 var health = other.GetComponent<BaseHealth>();
@@ -50,14 +57,19 @@ namespace ReGaSLZR.Bullet
                 }
 
                 health.Damage(damage);
-                StopAllCoroutines();
-                pooler.ReturnPooledItem(this);
+                DisableSelf();
             }
         }
 
         #endregion
 
         #region Class Implementation
+
+        private void DisableSelf()
+        {
+            StopAllCoroutines();
+            pooler.ReturnPooledItem(this);
+        }
 
         private IEnumerator C_ApplyLifetime(float lifetime)
         {
