@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config:
     stats:
-      maxHealth: 7
+      maxHealth: 1
     movement:
       speedMovement: 7
     moveType: 10
     attackDistance: 3
     bullet:
-      fireCooldown: 1
+      attackInterval: 0.5
       damage: 3
       lifetime: 2
       travelSpeed: 30

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player:
     stats:
-      maxHealth: 24
+      maxHealth: 30
     movement:
-      speedMovement: 10
+      speedMovement: 13
     speedRotation: 3
     mouseSensitivity: 2
     bullet:
-      fireCooldown: 0.1
-      damage: 1
+      attackInterval: 0.1
+      damage: 3
       lifetime: 5
       travelSpeed: 20
       poolCount: 40
