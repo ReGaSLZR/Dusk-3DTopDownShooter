@@ -27,6 +27,7 @@ namespace ReGaSLZR.Config
 
         [SerializeField]
         [Required]
+        [Expandable]
         private EnemyConfigSO config;
         public EnemyConfigSO Config => config;
 

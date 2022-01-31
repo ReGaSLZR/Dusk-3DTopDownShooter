@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace ReGaSLZR.Config
@@ -29,7 +30,7 @@ namespace ReGaSLZR.Config
 
         [SerializeField]
         [Range(0, 50)]
-        [Tooltip("Change only takes effect upon restart")]
+        [InfoBox("Change to the field below only takes effect upon restart", EInfoBoxType.Normal)]
         private uint poolCount = 20;
         public uint PoolCount => poolCount;
 
