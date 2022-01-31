@@ -1,11 +1,15 @@
+using ReGaSLZR.Character.Player;
 using ReGaSLZR.Config;
-using UnityEngine;
+using Zenject;
 
 namespace ReGaSLZR.Character.Enemy
 {
 
-    public class EnemyBrain : MonoBehaviour
+    public class EnemyBrain : BaseBrain
     {
+
+        [Inject]
+        private IPlayer.ISetter player;
 
         private Config.Enemy dummyConfig = new Config.Enemy();
         private EnemyConfigSO config;
@@ -13,8 +17,10 @@ namespace ReGaSLZR.Character.Enemy
 
         private EnemyPooler pooler;
 
-        public void OnDeath()
+        public override void OnDeath()
         {
+            player.IncrementScore();
+
             if (pooler == null)
             {
                 gameObject.SetActive(false);
