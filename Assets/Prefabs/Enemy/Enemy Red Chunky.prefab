@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5257951545857481282}
   - component: {fileID: 5257951545857481295}
   - component: {fileID: 5257951545857481294}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy Red Chunky
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -79,7 +79,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f916ea27ea2877d4c8a08359b706db10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: bc3f42d440ba67348a20eb8ac1f7cda6, type: 2}
 --- !u!114 &5257951545857481281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +141,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5257951545857481283}
     m_Modifications:
+    - target: {fileID: 6571362515152107108, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6571362515152107113, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -152,6 +156,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Simple Character Graphics
       objectReference: {fileID: 0}
+    - target: {fileID: 6571362515238233622, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6571362515238233625, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
         type: 3}
       propertyPath: m_RootOrder
@@ -160,6 +169,11 @@ PrefabInstance:
     - target: {fileID: 6571362515238233625, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
         type: 3}
       propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571362515238233625, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6571362515238233625, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
@@ -212,6 +226,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6571362515709150182, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6571362515709150187, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -222,11 +241,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6571362516021880349, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6571362516021880350, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 598668d0e57870343a2aefd254d27ab2, type: 2}
+    - target: {fileID: 6571362516757044240, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f, type: 3}
 --- !u!4 &1424778464269388220 stripped

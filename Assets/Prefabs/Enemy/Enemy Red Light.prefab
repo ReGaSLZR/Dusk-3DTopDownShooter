@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1424778464269388220, guid: 0d0d56f964428e040811f6e8509c2d9d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5257951545857481283, guid: 0d0d56f964428e040811f6e8509c2d9d,
         type: 3}
       propertyPath: m_RootOrder

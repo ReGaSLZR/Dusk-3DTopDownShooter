@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 856422142}
   - component: {fileID: 856422145}
   - component: {fileID: 856422144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Cube Camera Focus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2218,7 +2218,7 @@ GameObject:
   - component: {fileID: 948944643}
   - component: {fileID: 948944644}
   - component: {fileID: 948944645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4566,10 +4566,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 948944638}
     m_Modifications:
+    - target: {fileID: 6571362515152107108, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6571362515238233622, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
         type: 3}
       propertyPath: m_Name
       value: Graphics
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571362515238233622, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6571362515238233625, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
         type: 3}
@@ -4626,6 +4636,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6571362515709150182, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6571362516021880348, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -4635,6 +4650,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.877
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571362516021880349, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571362516757044240, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0ae27ad5fe32aa4c8c6a2b74d58f33f, type: 3}
