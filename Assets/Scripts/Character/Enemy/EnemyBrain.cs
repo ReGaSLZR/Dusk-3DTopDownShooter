@@ -1,19 +1,15 @@
-using NaughtyAttributes;
-using ReGaSLZR.Base;
 using ReGaSLZR.Config;
 using UnityEngine;
 
 namespace ReGaSLZR.Character.Enemy
 {
 
-    public class EnemyBrain : ReactiveMonoBehaviour
+    public class EnemyBrain : MonoBehaviour
     {
 
-        [SerializeField]
-        [Required]
+        private Config.Enemy dummyConfig = new Config.Enemy();
         private EnemyConfigSO config;
         public Config.Enemy Config => (config == null) ? dummyConfig : config.Config;
-        private Config.Enemy dummyConfig = new Config.Enemy();
 
         private EnemyPooler pooler;
 
@@ -37,13 +33,6 @@ namespace ReGaSLZR.Character.Enemy
         {
             this.pooler = pooler;
         }
-
-        protected override void RegisterObservables()
-        {
-            //todo
-        }
-
-
 
     }
 
