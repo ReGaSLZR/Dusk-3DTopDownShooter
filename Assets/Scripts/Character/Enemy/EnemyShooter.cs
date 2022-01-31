@@ -25,6 +25,11 @@ namespace ReGaSLZR.Character.Enemy
         {
             bulletPooler.SetUp(brain.Config.Bullet.PoolCount);
 
+            if (player == null)
+            {
+                return;
+            }
+
             this.UpdateAsObservable()
                 .Where(_ => player.HasPlayer())
                 .Where(_ => 

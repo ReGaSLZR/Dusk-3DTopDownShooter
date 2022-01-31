@@ -8,7 +8,7 @@ namespace ReGaSLZR.Character.Enemy
     public class EnemyHealth : BaseHealth
     {
 
-        #region Inspector Fields
+        #region Private Fields
 
         private EnemyBrain brain;
 
@@ -24,7 +24,7 @@ namespace ReGaSLZR.Character.Enemy
             SetMaxHealth(brain.Config.Stats.MaxHealth);
 
             GetHealth()
-                .Where(health => health == 0)
+                .Where(health => health <= 0)
                 .Subscribe(_ => brain.OnDeath())
                 .AddTo(disposablesBasic);
         }

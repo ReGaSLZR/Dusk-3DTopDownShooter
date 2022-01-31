@@ -38,6 +38,11 @@ namespace ReGaSLZR.Character.Enemy
 
         protected override void RegisterObservables()
         {
+            if (player == null)
+            {
+                return;
+            }
+
             this.FixedUpdateAsObservable()
                 .Where(_ => player.HasPlayer())
                 .Subscribe(_ => Move())

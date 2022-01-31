@@ -1,5 +1,4 @@
 using ReGaSLZR.Character.Player;
-using ReGaSLZR.Config;
 using UniRx;
 using Zenject;
 
@@ -30,7 +29,7 @@ namespace ReGaSLZR.Character.Action
         protected override void RegisterObservables()
         {   
             GetHealth()
-                .Subscribe(health => player.SetHealth(health))
+                .Subscribe(health => player.SetHealth((uint)health))
                 .AddTo(disposablesBasic);
         }
 

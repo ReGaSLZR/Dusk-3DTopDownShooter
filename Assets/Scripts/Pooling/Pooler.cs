@@ -27,6 +27,7 @@ namespace ReGaSLZR.Pooling
         protected Transform itemsParent;
         protected List<T> items = new List<T>();
         protected int currentIndex = 0;
+        protected bool itemsLiveOnUponDisable = true;
 
         #region Unity Callbacks
 
@@ -40,6 +41,11 @@ namespace ReGaSLZR.Pooling
 
         protected virtual void OnDisable()
         {
+            if (itemsLiveOnUponDisable)
+            {
+                return;
+            }
+
             foreach (var item in items)
             {
                 if (item == null)
@@ -54,6 +60,11 @@ namespace ReGaSLZR.Pooling
         #endregion
 
         #region Public API
+
+        public void SetItemsLiveOnUponDisable(bool itemsLiveOn)
+        {
+            itemsLiveOnUponDisable = itemsLiveOn;
+        }
 
         public void SetUp(uint poolLength)
         {

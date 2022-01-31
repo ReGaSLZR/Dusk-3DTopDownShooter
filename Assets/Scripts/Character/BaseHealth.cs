@@ -9,20 +9,20 @@ namespace ReGaSLZR.Character
     {
 
         protected uint maxHealth = 3;
-        protected IReactiveProperty<uint> health = new ReactiveProperty<uint>(3);
+        protected IReactiveProperty<int> health = new ReactiveProperty<int>(3);
 
         public virtual void SetMaxHealth(uint maxHealth)
         {
             this.maxHealth = maxHealth;
-            health.Value = maxHealth;
+            health.Value = (int)maxHealth;
         }
 
         public virtual void Damage(uint damage)
         {
-            health.Value = (uint)Mathf.Clamp((health.Value - damage), 0, maxHealth);
+            health.Value = Mathf.Clamp((health.Value - (int)damage), 0, (int)maxHealth);
         }
 
-        public IReadOnlyReactiveProperty<uint> GetHealth() => health;
+        public IReadOnlyReactiveProperty<int> GetHealth() => health;
 
     }
 
