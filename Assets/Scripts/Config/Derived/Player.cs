@@ -23,7 +23,7 @@ namespace ReGaSLZR.Config
         public float SpeedRotation => speedRotation;
 
         [SerializeField]
-        [Range(1f, 5f)]
+        [Range(1f, 10f)]
         private float mouseSensitivity = 3f;
         public float MouseSensitivity => mouseSensitivity;
 

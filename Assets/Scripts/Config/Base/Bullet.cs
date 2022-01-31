@@ -9,7 +9,7 @@ namespace ReGaSLZR.Config
     {
 
         [SerializeField]
-        [Range(0.0001f, 3f)]
+        [Range(0.0001f, 5f)]
         private float attackInterval = 0.5f;
         public float AttackInterval => attackInterval;
 
@@ -19,17 +19,17 @@ namespace ReGaSLZR.Config
         public uint Damage => damage;
 
         [SerializeField]
-        [Range(0.1f, 5f)]
+        [Range(0.1f, 15f)]
         private float lifetime = 3f;
         public float Lifetime => lifetime;
 
         [SerializeField]
-        [Range(0.1f, 30f)]
+        [Range(0.1f, 50f)]
         private float travelSpeed = 3f;
         public float Speed => travelSpeed;
 
         [SerializeField]
-        [Range(0, 50)]
+        [Range(1, 50)]
         [InfoBox("Change to the field below only takes effect upon restart", EInfoBoxType.Normal)]
         private uint poolCount = 20;
         public uint PoolCount => poolCount;
