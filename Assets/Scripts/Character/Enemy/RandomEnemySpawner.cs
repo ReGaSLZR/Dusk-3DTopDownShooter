@@ -40,7 +40,6 @@ namespace ReGaSLZR.Character.Enemy
 
                 var prefab = enemyTypes.Entries[x].PrefabBrain;
                 prefab.SetConfig(enemyTypes.Entries[x].Config);
-                prefab.SetPooler(pooler);
                 pooler.SetPrefab(prefab);
                 pooler.SetItemsLiveOnUponDisable(true);
                 pooler.SetUp(spawnerConfig.PoolCountPerType);
@@ -63,6 +62,7 @@ namespace ReGaSLZR.Character.Enemy
             var enemy = poolers[index].GetPooledItem();
 
             enemy.gameObject.SetActive(false);
+            enemy.SetPooler(poolers[index]);
             prefabInjector.InjectPrefab(enemy.gameObject);
             enemy.SetConfig(enemyTypes.Entries[index].Config);
             enemy.transform.position = gameObject.transform.position;
