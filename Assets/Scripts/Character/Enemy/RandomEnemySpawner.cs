@@ -1,6 +1,6 @@
-using ReGaSLZR.Base;
 using ReGaSLZR.Character.Player;
 using ReGaSLZR.Config;
+using ReGaSLZR.Prefab;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
