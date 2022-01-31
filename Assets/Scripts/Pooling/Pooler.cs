@@ -24,10 +24,14 @@ namespace ReGaSLZR.Pooling
 
         #endregion
 
+        #region Private Fields
+
         protected Transform itemsParent;
         protected List<T> items = new List<T>();
         protected int currentIndex = 0;
         protected bool itemsLiveOnUponDisable = true;
+
+        #endregion
 
         #region Unity Callbacks
 
