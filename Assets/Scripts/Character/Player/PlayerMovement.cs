@@ -3,9 +3,9 @@ using ReGaSLZR.Base;
 using Zenject;
 using UniRx;
 using UniRx.Triggers;
-using ReGaSLZR.Config;
+using ReGaSLZR.Character.Player.Input;
 
-namespace ReGaSLZR.Player.Controls
+namespace ReGaSLZR.Character.Player
 {
 
     [RequireComponent(typeof(Rigidbody))]

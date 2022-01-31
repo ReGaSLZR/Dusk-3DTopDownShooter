@@ -7,7 +7,7 @@ using Zenject;
 using ReGaSLZR.Player.Input;
 using static UnityEngine.InputSystem.InputAction;
 
-namespace ReGaSLZR.Player.Controls
+namespace ReGaSLZR.Character.Player.Input
 {
 
     public class PlayerInputModel : MonoInstaller<PlayerInputModel>, IPlayerInput
@@ -102,10 +102,12 @@ namespace ReGaSLZR.Player.Controls
 
         private void OnDeviceChange(InputDevice device, InputDeviceChange change)
         {   
-            LogUtil.PrintInfo(GetType(), $"added? {device.added} | class {device.description.deviceClass} | change {change}");
+            LogUtil.PrintInfo(GetType(), $"added? {device.added} | " +
+                $"class {device.description.deviceClass} | change {change}");
 
             //device.description.deviceClass
-            //NOTE: for some reason it returns "class" instead of "Gamepad" or "keyboard", contrary to https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/Devices.html
+            //NOTE: for some reason it returns "class" instead of "Gamepad" or "keyboard",
+            //contrary to https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/Devices.html
             //I'm gonna use (Gamepad.current != null) instead
             //I'm using an XBox Series X Controller connected via a USB wire
 

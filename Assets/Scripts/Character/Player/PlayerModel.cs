@@ -8,11 +8,15 @@ namespace ReGaSLZR.Character.Player
     public class PlayerModel : MonoInstaller<PlayerModel>, IPlayer.IGetter, IPlayer.ISetter
     {
 
+        #region Private Fields
+
         private IReactiveProperty<GameObject> rPlayer = new ReactiveProperty<GameObject>();
 
         private IReactiveProperty<uint> rHealth = new ReactiveProperty<uint>(1);
         private IReactiveProperty<uint> rMaxHealth = new ReactiveProperty<uint>(1);
         private IReactiveProperty<int> rScore = new ReactiveProperty<int>(0);
+
+        #endregion
 
         public override void InstallBindings()
         {
@@ -20,7 +24,7 @@ namespace ReGaSLZR.Character.Player
             Container.BindInstance<IPlayer.ISetter>(this);
         }
 
-        #region Interface Implementations
+        #region Interface Getter Implementations
 
         public IReadOnlyReactiveProperty<GameObject> GetPlayer()
         {
@@ -41,6 +45,10 @@ namespace ReGaSLZR.Character.Player
         public IReadOnlyReactiveProperty<uint> GetMaxHealth() => rMaxHealth;
 
         public IReadOnlyReactiveProperty<int> GetScore() => rScore;
+
+        #endregion
+
+        #region Interface Setter Implementations
 
         public void SetPlayer(GameObject player)
         {
