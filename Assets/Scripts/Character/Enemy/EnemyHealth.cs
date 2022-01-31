@@ -14,10 +14,16 @@ namespace ReGaSLZR.Character.Enemy
 
         #endregion
 
+        #region Unity Callbacks
+
         private void Awake()
         {
             brain = GetComponent<EnemyBrain>();
         }
+
+        #endregion
+
+        #region Class Overrides
 
         protected override void RegisterObservables()
         {
@@ -28,6 +34,8 @@ namespace ReGaSLZR.Character.Enemy
                 .Subscribe(_ => brain.OnDeath())
                 .AddTo(disposablesBasic);
         }
+
+        #endregion
 
     }
 
