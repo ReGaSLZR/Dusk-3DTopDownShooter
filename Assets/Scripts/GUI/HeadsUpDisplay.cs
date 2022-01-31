@@ -1,6 +1,7 @@
 using NaughtyAttributes;
 using ReGaSLZR.Base;
 using ReGaSLZR.Character.Player;
+using ReGaSLZR.Data;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -27,14 +28,13 @@ namespace ReGaSLZR.GUI
         [Required]
         private TextMeshProUGUI textHighScore;
 
-        [SerializeField]
-        [Required]
-        private TextMeshProUGUI textWave;
-
         #endregion
 
         [Inject]
         private IPlayer.IGetter player;
+
+        [Inject]
+        private IData.IGetter data;
 
         protected override void RegisterObservables()
         {
@@ -44,6 +44,14 @@ namespace ReGaSLZR.GUI
 
             player.GetHealth()
                 .Subscribe(health => sliderHealth.value = health)
+                .AddTo(disposablesBasic);
+
+            player.GetScore()
+                .Subscribe(score => textScore.text = score.ToString())
+                .AddTo(disposablesBasic);
+
+            data.GetHighScore()
+                .Subscribe(highScore => textHighScore.text = highScore.ToString())
                 .AddTo(disposablesBasic);
         }
 

@@ -12,6 +12,8 @@ namespace ReGaSLZR.Character.Player
 
         private IReactiveProperty<uint> rHealth = new ReactiveProperty<uint>(1);
         private IReactiveProperty<uint> rMaxHealth = new ReactiveProperty<uint>(1);
+        private IReactiveProperty<int> rScore = new ReactiveProperty<int>(0);
+
         public override void InstallBindings()
         {
             Container.BindInstance<IPlayer.IGetter>(this);
@@ -38,6 +40,8 @@ namespace ReGaSLZR.Character.Player
 
         public IReadOnlyReactiveProperty<uint> GetMaxHealth() => rMaxHealth;
 
+        public IReadOnlyReactiveProperty<int> GetScore() => rScore;
+
         public void SetPlayer(GameObject player)
         {
             rPlayer.Value = player;
@@ -51,6 +55,11 @@ namespace ReGaSLZR.Character.Player
         public void SetMaxHealth(uint health)
         {
             rMaxHealth.Value = health;
+        }
+
+        public void IncrementScore()
+        {
+            rScore.Value = rScore.Value + 1;
         }
 
         #endregion

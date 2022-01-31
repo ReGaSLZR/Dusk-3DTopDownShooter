@@ -15,6 +15,7 @@ namespace ReGaSLZR.Character.Player
             Vector3 GetDirection(Vector3 origin);
             IReadOnlyReactiveProperty<uint> GetHealth();
             IReadOnlyReactiveProperty<uint> GetMaxHealth();
+            IReadOnlyReactiveProperty<int> GetScore();
         }
 
         public interface ISetter
@@ -22,6 +23,7 @@ namespace ReGaSLZR.Character.Player
             void SetPlayer(GameObject player);
             void SetHealth(uint health);
             void SetMaxHealth(uint health);
+            void IncrementScore();
         }
 
     }
