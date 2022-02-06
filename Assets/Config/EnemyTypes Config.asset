@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   types:
     entries:
-    - prefabBrain: {fileID: 5257951545857481280, guid: 0d0d56f964428e040811f6e8509c2d9d,
-        type: 3}
-      config: {fileID: 11400000, guid: 7e0dec8c38950ea43be99d882d32b2f2, type: 2}
     - prefabBrain: {fileID: 110615266122629170, guid: eb01c88e04f37c7469782274b7943c2a,
         type: 3}
       config: {fileID: 11400000, guid: bc3f42d440ba67348a20eb8ac1f7cda6, type: 2}
